@@ -13,10 +13,16 @@
       "reminder": true
     },
     {
-      "id": 3,
-      "text": "Food Shopping",
-      "day": "May 7th at 12:30pm",
-      "reminder": true
+      "text": "Work",
+      "day": "4. april 2022",
+      "reminder": false,
+      "id": 3
+    },
+    {
+      "text": "aa",
+      "day": "4. april 2022 - 15:36",
+      "reminder": false,
+      "id": 4
     }
   ]
 }
