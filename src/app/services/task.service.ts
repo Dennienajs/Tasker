@@ -3,7 +3,7 @@ import { Task } from "../Task";
 import { Observable } from "rxjs";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 
-const apiUrl = 'http://localhost:3000/tasks';
+const apiUrl = 'http://localhost:5000/tasks';
 const apiUrlId = (task: Task) => `${apiUrl}/${task.id!}`
 
 const httpOptions = {

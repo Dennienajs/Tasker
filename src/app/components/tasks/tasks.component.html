@@ -1,4 +1,6 @@
 <div>
+  <app-add-task></app-add-task>
+
   <div *ngIf="isLoading; then loading; else ready"></div>
 
   <ng-template #loading>
