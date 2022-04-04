@@ -17,12 +17,8 @@ export class TaskComponent implements OnInit {
 
   faTimes = faTimes;
 
-
-
   constructor() { }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   onDelete = (task: Task) =>
     this.onDeleteTask.emit(task);
@@ -30,6 +26,4 @@ export class TaskComponent implements OnInit {
 
   onToggleReminder = (task: Task) =>
     this.onToggleTaskReminder.emit(task);
-
-
 }

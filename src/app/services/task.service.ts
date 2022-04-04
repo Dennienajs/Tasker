@@ -25,7 +25,10 @@ export class TaskService {
   deleteTask = (task: Task): Observable<Task> =>
     this.httpClient.delete<Task>(apiUrlId(task));
 
-  updateTask = (task: Task) =>
+  updateTask = (task: Task): Observable<Task> =>
     this.httpClient.put<Task>(apiUrlId(task), task, httpOptions);
+
+  addTask = (task: Task): Observable<Task> =>
+    this.httpClient.post<Task>(apiUrl, task, httpOptions);
 
 }

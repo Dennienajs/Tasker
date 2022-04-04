@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Colors} from "../button/button.component";
+import { Subscription } from 'rxjs';
+import { UiService } from 'src/app/services/ui.service';
+import { Colors } from "../button/button.component";
 
 @Component({
   selector: 'app-header',
@@ -7,16 +9,23 @@ import {Colors} from "../button/button.component";
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  public Colors = Colors;
+  public colors = Colors;
+  randomColor: Colors = Math.round(Math.random() * 7)
   title = 'Angular Tasker';
+  isShowingAddTask = false;
+  subscription: Subscription;
 
-  constructor() { }
 
-  ngOnInit(): void {
+  constructor(private uiService: UiService) {
+    this.subscription = this.uiService
+      .onToggle()
+      .subscribe(value => this.isShowingAddTask = value)
   }
 
+  ngOnInit(): void { }
 
-  toggleAddTask = () =>{
-    console.log("toggleAddTask()");
-  }
+  toggleAddTask = () =>
+    this.uiService.toggleAddTask();
+
+
 }
