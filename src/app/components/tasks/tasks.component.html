@@ -1,0 +1,16 @@
+<div>
+  <div *ngIf="isLoading; then loading; else ready"></div>
+
+  <ng-template #loading>
+    <app-task *ngFor="let i of [1, 2, 3]" [isLoading]="isLoading"> </app-task>
+  </ng-template>
+
+  <ng-template #ready>
+    <app-task
+      *ngFor="let task of tasks"
+      [task]="task"
+      (onDeleteTask)="deleteTask(task)"
+      (onToggleTaskReminder)="toggleReminder(task)"
+    ></app-task>
+  </ng-template>
+</div>
