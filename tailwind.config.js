@@ -1,4 +1,5 @@
 module.exports = {
+  darkMode: "class", // media = based on browser default, class = dark:
   content: ["./src/**/*.{html,ts}"],
   theme: {
     minHeight: {
@@ -14,6 +15,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Inter var"],
+        body: ['"Open Sans"'],
       },
     },
   },
