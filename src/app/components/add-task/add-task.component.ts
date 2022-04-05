@@ -2,6 +2,8 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { UiService } from 'src/app/services/ui.service';
 import { Task } from "../../Task";
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-add-task',
@@ -12,12 +14,13 @@ export class AddTaskComponent implements OnInit {
   @Output() onAddTask: EventEmitter<Task> = new EventEmitter();
   @Output() onToggleModal: EventEmitter<Task> = new EventEmitter();
 
+  faTimes = faTimes;
   task: Task;
   isShowingAddTask = false;
   subscription: Subscription;
 
   constructor(private uiService: UiService) {
-    this.task = { text: "", day: asString(getFormattedDate()), reminder: false };
+    this.task = { text: "", day: new Date(), reminder: false };
     this.subscription = this.uiService
       .onToggle()
       .subscribe(value => this.isShowingAddTask = value);
@@ -47,25 +50,14 @@ export class AddTaskComponent implements OnInit {
     this.onAddTask.emit(this.task);
 
     // reset
-    this.task = { text: "", day: asString(getFormattedDate()), reminder: false };
+    this.task = {
+      text: "",
+      day: new Date(),
+      reminder: false
+    };
+
     this.toggleIsShowingAddTask();
   }
 
 }
 
-
-const getFormattedDate = () => {
-  let date = new Date().toLocaleDateString('da-dk', { day: 'numeric' })
-  let month = new Date().toLocaleDateString('da-dk', { month: 'long' })
-  let year = new Date().toLocaleDateString('da-dk', { year: 'numeric' })
-  let hour = new Date().toLocaleTimeString('da-dk', { hour: 'numeric' })
-  let min = new Date().toLocaleTimeString('da-dk', { minute: 'numeric' })
-
-  const formattedDate = `${date} ${month} ${year} - ${hour}:${min}`
-
-  console.log(formattedDate) // 26-March-2022
-
-  return formattedDate
-}
-
-const asString = (input: any) => "" + input;
