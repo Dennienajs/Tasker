@@ -9,7 +9,7 @@
     {
       "text": "Lost Ark",
       "day": "2022-04-05T16:30",
-      "reminder": false,
+      "reminder": true,
       "id": 2
     },
     {
