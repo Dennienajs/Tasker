@@ -1,4 +1,4 @@
-<div>
+<div class="dark:bg-gray-800 dark:text-white">
   <app-add-task (onAddTask)="addTask($event)"></app-add-task>
 
   <div *ngIf="isLoading; then loading; else ready"></div>

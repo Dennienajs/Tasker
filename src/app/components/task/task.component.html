@@ -1,26 +1,30 @@
 <div *ngIf="isLoading; then loading; else ready"></div>
 
 <ng-template #loading>
-  <div class="m-2 py-2 px-3 shadow-md animate-pulse opacity-40">
-    <h3 class="flex items-center justify-between text-white">.</h3>
-    <p class="text-white">.</p>
+  <div class="m-2 py-2 px-3 shadow-md hover:shadow-lg hover:animate-pulse">
+    <h3 class="flex items-center justify-between dark:shadow-slate-800">
+      <br /><br />
+    </h3>
+    <p><br /><br /></p>
   </div>
 </ng-template>
 
 <ng-template #ready>
   <div
-    [ngClass]="task.reminder ? 'border-l border-green-500' : ''"
+    [ngClass]="task?.reminder ? 'border-l border-green-500' : ''"
     (dblclick)="onToggleReminder(task)"
-    class="m-2 py-2 px-3 cursor-pointer shadow-md hover:shadow-lg hover:animate-pulse"
+    class="m-2 py-2 px-3 shadow-md hover:shadow-lg hover:animate-pulse cursor-pointer"
   >
     <h3 class="flex items-center justify-between">
       {{ task.text }}
       <fa-icon
-        class="text-gray-600 hover:text-red-600"
-        [icon]="faTimes"
+        title="Delete"
+        class="text-gray-500 hover:text-red-600 opacity-30 hover:opacity-100"
+        [icon]="icon"
         (click)="onDelete(task)"
       ></fa-icon>
     </h3>
-    <p>{{ task.day }}</p>
+
+    <p>{{ task.day | prettifyDate }}</p>
   </div>
 </ng-template>
