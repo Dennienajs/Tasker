@@ -1,11 +1,21 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html id="htmlRoot" lang="en" class="dark">
   <head>
     <meta charset="utf-8" />
     <title>Tasker</title>
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <script>
+      const key = "dark";
+      // first time => key not found return null
+      if (localStorage.getItem(key) === null) {
+        console.log("isDark === null");
+        localStorage.setItem(key, "true");
+      } else if (localStorage.getItem(key) === "false") {
+        localStorage.setItem(key, "false");
+      }
+    </script>
   </head>
   <body class="bg-slate-50 dark:bg-slate-900 h-screen pt-8">
     <app-root></app-root>
