@@ -1,10 +1,13 @@
-# Tasker
+# Tasker - learning Angular + tailwindcss basics
 
-## Tools
+## Tools used
 
-Angular ........................ https://angular.io/
-Tailwindcss and Dark mode ...... https://tailwindcss.com/
-CRUD tasks with Json Server .... https://www.npmjs.com/package/json-server
+Angular https://angular.io/
+
+Tailwindcss and Dark mode https://tailwindcss.com/
+
+CRUD tasks with Json Server https://www.npmjs.com/package/json-server
+
 
 # Credits
 
