@@ -7,13 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <script>
+      /*
+        DARK MODE PERSISTENCE
+        first time => key not found returns null
+      */
       const key = "dark";
-      // first time => key not found return null
       if (localStorage.getItem(key) === null) {
         console.log("isDark === null");
         localStorage.setItem(key, "true");
       } else if (localStorage.getItem(key) === "false") {
         localStorage.setItem(key, "false");
+        document.getElementById("htmlRoot").classList.remove(key);
       }
     </script>
   </head>
