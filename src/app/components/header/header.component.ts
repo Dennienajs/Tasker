@@ -40,19 +40,15 @@ export class HeaderComponent implements OnInit {
 
 }
 
-function toggleDarkMode() {
-  console.log("toggleDarkMode()");
+const toggleDarkMode = () => {
   const key = "dark";
-
   var root = document.getElementById("htmlRoot")!;
 
   if (root.classList.contains(key)) {
     root.classList.remove(key);
     localStorage.setItem(key, "false");
-    console.log("removed dark");
   } else {
     root.classList.add(key);
     localStorage.setItem(key, "true");
-    console.log("added dark");
   }
 }
