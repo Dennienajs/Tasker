@@ -4,8 +4,7 @@ export enum Colors { Blue, Green, Cyan, Teal, Lime, Red, Pink, Purple, Purple2, 
 const baseClasses = "hover:animate-pulse bg-gradient-to-r hover:bg-gradient-to-br focus:outline-none focus:ring-1 font-medium rounded-lg text-sm px-5 py-2.5 text-center";
 @Component({
   selector: 'app-button',
-  templateUrl: './button.component.html',
-  styleUrls: ['./button.component.scss']
+  template: `<button type="{{ type }}" class="{{ classes }}">{{ text }}</button>`
 })
 export class ButtonComponent implements OnInit {
 

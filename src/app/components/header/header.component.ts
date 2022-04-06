@@ -6,8 +6,7 @@ import { faMoon as moon, faSun as sun } from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  templateUrl: './header.component.html'
 })
 export class HeaderComponent implements OnInit {
   public colors = Colors;
@@ -44,11 +43,11 @@ const toggleDarkMode = () => {
   const key = "dark";
   var root = document.getElementById("htmlRoot")!;
 
+  root.classList.toggle(key);
+
   if (root.classList.contains(key)) {
-    root.classList.remove(key);
     localStorage.setItem(key, "false");
   } else {
-    root.classList.add(key);
     localStorage.setItem(key, "true");
   }
 }

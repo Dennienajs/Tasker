@@ -7,8 +7,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-add-task',
-  templateUrl: './add-task.component.html',
-  styleUrls: ['./add-task.component.scss']
+  templateUrl: './add-task.component.html'
 })
 export class AddTaskComponent implements OnInit {
   @Output() onAddTask: EventEmitter<Task> = new EventEmitter();
