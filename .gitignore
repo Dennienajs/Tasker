@@ -40,3 +40,10 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Cypress
+cypress/videos/1-getting-started
+cypress/videos/2-advanced-examples
+cypress/integration/1-getting-started
+cypress/integration/2-advanced-examples
+
