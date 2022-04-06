@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { faTrashCan as deleteIcon } from '@fortawesome/free-solid-svg-icons';
-import { Task } from "../../Task";
+import { Task } from "../../types/Task";
 
 @Component({
   selector: 'app-task',

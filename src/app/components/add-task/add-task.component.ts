@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { UiService } from 'src/app/services/ui.service';
-import { Task } from "../../Task";
+import { Task } from "../../types/Task";
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 
