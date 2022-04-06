@@ -1,5 +1,8 @@
 # Tasker - learning Angular + tailwindcss basics
 
+### Video (Cypress test)
+https://raw.githubusercontent.com/Dennienajs/Tasker/main/cypress/videos/tasker.spec.js.mp4
+
 ## Tools used
 
 Angular https://angular.io/
