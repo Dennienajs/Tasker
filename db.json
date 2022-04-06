@@ -1,28 +1,16 @@
 {
   "tasks": [
     {
-      "text": "Frokost",
-      "day": "2022-04-05T11:30",
-      "reminder": true,
+      "text": "Test Task",
+      "day": "2022-05-29T12:30",
+      "reminder": false,
       "id": 1
     },
     {
-      "text": "Lost Ark",
-      "day": "2022-04-05T16:30",
+      "text": "Test Task2",
+      "day": "2023-04-29T13:30",
       "reminder": true,
       "id": 2
-    },
-    {
-      "text": "Important Task",
-      "day": "2022-04-08T18:00",
-      "reminder": true,
-      "id": 3
-    },
-    {
-      "text": "asd",
-      "day": "2022-04-05T11:22:13.382Z",
-      "reminder": false,
-      "id": 4
     }
   ]
 }
