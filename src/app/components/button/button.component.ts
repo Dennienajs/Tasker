@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
-export enum Colors { Blue, Green, Cyan, Teal, Lime, Red, Pink, Purple }
+export enum Colors { Blue, Green, Cyan, Teal, Lime, Red, Pink, Purple, Purple2, OrangeIsh }
 const baseClasses = "hover:animate-pulse bg-gradient-to-r hover:bg-gradient-to-br focus:outline-none focus:ring-1 font-medium rounded-lg text-sm px-5 py-2.5 text-center";
 @Component({
   selector: 'app-button',
@@ -28,7 +28,7 @@ export class ButtonComponent implements OnInit {
   }
 
   SetButtonClasses = () => {
-    const base: string = "hover:animate-pulse bg-gradient-to-r hover:bg-gradient-to-br focus:outline-none focus:ring-1 font-medium rounded-lg text-sm px-5 py-2.5 text-center ";
+    const base: string = "hover:animate-pulse bg-gradient-to-r hover:bg-gradient-to-br focus:outline-none focus:ring-1 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-105 duration-200 ";
     let custom: string = "";
 
     switch (this.color) {
@@ -56,6 +56,14 @@ export class ButtonComponent implements OnInit {
       case Colors.Purple:
         custom = "text-white from-purple-500 via-purple-600 to-purple-700"
         break;
+      case Colors.Purple2:
+        custom = "text-white from-indigo-500 via-purple-500 to-pink-500"
+        break;
+      case Colors.OrangeIsh:
+        custom = "text-white from-green-400 to-blue-500 from-pink-500 to-yellow-500"
+        break;
+
+
     }
 
     this.classes = base + custom;
